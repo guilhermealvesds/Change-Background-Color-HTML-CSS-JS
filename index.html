@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Alterar cor do background</title>
+	<style>
+		body {
+			background-color: white;
+			color: black;
+			font-size: 24px;
+			font-family: Arial;
+			text-align: center;
+			padding: 50px;
+		}
+
+		input {
+		    width: 420px;
+			margin: 10px;
+			padding: 10px;
+			font-size: 20px;
+			border: none;
+			border-radius: 5px;
+		}
+
+		button {
+			padding: 10px 20px;
+			background-color: #4CAF50;
+			color: white;
+			font-size: 20px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+		}
+
+		.color-box {
+			width: 50px;
+			height: 50px;
+			display: inline-block;
+			margin: 5px;
+			border: 1px solid black;
+			border-radius: 5px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Alterar cor do background</h1>
+	<input type="text" id="color-input" placeholder="Digite uma cor em notação HTML, ex: #FF0000">
+	<button onclick="changeColor()">Alterar cor</button>
+	<div id="color-list"></div>
+
+	<script>
+		var colorList = [];
+
+		function changeColor() {
+			var colorInput = document.getElementById("color-input").value;
+			document.body.style.backgroundColor = colorInput;
+			document.getElementById("color-list").innerHTML += "<div class='color-box' style='background-color: "+colorInput+"'></div>";
+			colorList.push(colorInput);
+			document.getElementById("color-input").value = "";
+		}
+	</script>
+</body>
+</html>
